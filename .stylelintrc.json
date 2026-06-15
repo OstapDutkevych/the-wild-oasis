@@ -1,0 +1,6 @@
+{
+  "customSyntax": "postcss-styled-syntax",
+  "rules": {
+    "custom-property-no-missing-var-function": true
+  }
+}

@@ -1,0 +1,17 @@
+import { useQuery } from '@tanstack/react-query';
+import { getCurrentUser } from '@services/apiAuth.js';
+
+export function useUser() {
+  const { isPending, data: user } = useQuery({
+    queryKey: ['user'],
+    queryFn: getCurrentUser,
+  });
+
+  console.log(user);
+
+  return {
+    isPending,
+    user,
+    isAuth: user?.role === 'authenticated',
+  };
+}
